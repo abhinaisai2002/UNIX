@@ -1,0 +1,7 @@
+if (( $# == 0 ))
+then
+    sed 's+//+/*+g' > output
+    sed 's+\/\*.*+&*/+ output
+else
+    echo "This script only takes one arguments"
+fi

@@ -1,0 +1,12 @@
+if (( $# == 1 ))
+then
+    if [[ -s $1 ]]
+    then
+        string=$1
+        ls -l | grep 'string' > output 
+        awk '{ print $2 }' output
+    else
+        echo "File doesnot exist"
+else
+    echo "Only 1 argument"
+fi

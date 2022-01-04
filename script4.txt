@@ -1,0 +1,19 @@
+if (( $# == 2 ))
+then
+    if [[ -s $1 ]]
+    then
+        if [[ -d $2 ]]
+        then
+            for filename in $(cat $1)
+            do
+                cp $filename /home/xi-cse-c/$2 
+            done
+        else
+            echo "Directory doesnot exist"
+        fi
+    else
+        echo "File doesnot exist or empty"
+    fi
+else
+    echo "Only 2 arguments"
+fi

@@ -1,0 +1,12 @@
+if (( $# == 2 ))
+then
+	if [[ -s $2 ]]
+	then
+	    grep -n $1 $2
+	else
+		echo "The file doesnot exist or empty"
+	fi	
+
+else
+	echo "This program requires only 2 arguments"
+fi
