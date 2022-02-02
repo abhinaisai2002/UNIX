@@ -5,7 +5,8 @@ then
 	grep ".*\.c$" out > output2
 	for filename in $(cat output2)
 	do
-	    gcc  $filename -o $filename.exe
+	    exe=$(echo $filename | cut -d'.' -f 1)
+	    gcc  $filename -o $exe.exe
 	done
 else
 	echo "This script does not take any arguments"
